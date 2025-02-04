@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+h1 {
+    color: #ff3860;
+    text-align: center;
+    font-size: 3.5rem;
+    text-shadow: 3px 3px 0 #fff, 5px 5px 0 rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.opening_eff {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: url(Animation-1738582289554-ezgif.com-gif-maker\ copy.gif) no-repeat center, pink;
+    z-index: 99;
+    animation: heartPulse 1.5s ease-out 700ms forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+@keyframes heartPulse {
+    0% {
+        opacity: 1;
+    }
+    /* 70%{
+        opacity: 1;
+    } */
+    95% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(45);
+        visibility: hidden;
+    }
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    place-content: center;
+    gap: 2rem;
+    justify-items: center;
+    
+}
+.container img{
+    pointer-events: none;
+}
+.buttons {
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.buttons > button {
+    position: relative;
+    padding: 20px 40px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+}
+
+#yes {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+    overflow: hidden;
+}
+
+#yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+}
+
+#yes::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    background: linear-gradient(to bottom, rgba(229, 172, 142, 0), 
+             rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0));
+
+    transform: rotateZ(60deg) translate(-5em, 7.5em);
+}
+
+#yes::after {
+    animation: sheen 1s infinite;
+}
+
+@keyframes sheen { 
+    100% {
+      transform: rotateZ(60deg) translate(1em, -4em);
+    }
+}
+
+#eo{
+    background-color: gray;
+    transition: transform 0.5s ease;
+}
+
+#eo:hover{
+    background:url(Capoo_WHATTTT.gif) no-repeat center;
+    background-size: contain;
+    color: transparent;
+}
+#eo:hover::before{
+    content: 'what ?';
+    position: absolute;
+    color: #ff3860;
+    animation: text_around 3s infinite;
+}
+@keyframes text_around{ 
+    0%{
+        top: -50%;
+    }
+    50%{
+        content: 'you dare ?';
+        top: -50%;
+        right: -50%;
+    }
+    75%{
+        content: 'huh ?';
+        bottom: 0%;
+    }
+    100%{
+        content: 'really ?';
+        top: -50%;
+        left: -50%;
+    }
+}
+
+.emoji-rain {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.emoji {
+    position: absolute;
+    animation: float 3s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes float {
+    from { transform: translateY(0) rotate(0deg); opacity: 1; }
+    to { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
