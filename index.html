@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
     <title>HiHi</title>
 </head>
 <body>
-    <div class="opening_eff">
-    </div>
-
+    <div class="opening_eff"></div>
+    <div id="player"></div>
+    <div id="hearts-container"></div>
+    <h2 id="opening_messages"></h1>
+    
+    
     <div class="container">
-        <h1>Do ya ?</h1>
-        <img src="Hungry Cat Sticker by Capoo.gif" alt="">
+        <h1>Do u luv meeeeeeee :33 </h1>
+        <img src="Happy Fun Sticker by Minto Inc.gif" alt="">
         <div class="buttons">
-            <button id="yes" onclick="clicked()"> ofc </button>
-            <button id="eo"> not </button>
+            <button id="yes" onclick="clicked()"> yes 💖💖💖 </button>
+            <button id="eo"> no  </button>
         </div>
     </div>
+
+
+    <script>
+        var tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>    
 </body>
+
 </html>
