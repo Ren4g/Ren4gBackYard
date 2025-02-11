@@ -1,59 +1,127 @@
+/* *, *::after, *::before{
+    border: red 5px solid;
+} */
+
+:root{
+    --border-size: 5rem;
+}
+/* 
+*, *::before, *::after{
+    box-sizing: border-box;
+} */
+
 body {
+    box-sizing: border-box;
     margin: 0;
     height: 100vh;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border: var(--border-size) solid transparent;
+    background:  linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border-image: url(Yellow\ Pastel\ Cute\ Playful\ Blank\ Page\ A4\ Landscape.png) 33% round;
+    border-image-slice: fill;
     overflow: hidden;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: "Concert One",'Comic Sans MS', cursive;
+    font-size: clamp(.5rem, 2rem, 4rem);
+    
 }
 
-h1 {
+@media (width <=900px) {
+    body{
+        background: url(bgDoc.png) no-repeat center;
+        background-size: 100% 100vh;
+        background-size: cover;
+        border-image: none;
+        border: none;
+    }
+    h2{
+
+    }
+}
+
+h1, h2 {
     color: #ff3860;
     text-align: center;
     font-size: 3.5rem;
     text-shadow: 3px 3px 0 #fff, 5px 5px 0 rgba(0,0,0,0.1);
     margin-bottom: 2rem;
 }
-
 .opening_eff {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    background: url(Animation-1738582289554-ezgif.com-gif-maker\ copy.gif) no-repeat center, pink;
+    /* background: url('Animation-1738582289554-ezgif.com-gif-maker copy.gif?v=1') no-repeat center, pink; */
+    /* background-size: contain; */
     z-index: 99;
-    animation: heartPulse 1.5s ease-out 700ms forwards;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* animation: heartPulse 1.4s 700ms ease-out forwards;
+    animation-iteration-count: 1; */
     user-select: none;
+    display: grid;
+    place-content: center;
+    backface-visibility: hidden;
+    transform: translateZ(0); 
+    will-change: opacity, transform;
 }
+
 
 @keyframes heartPulse {
     0% {
         opacity: 1;
+        transform: scale(1);
     }
-    /* 70%{
+    55% {
         opacity: 1;
-    } */
+        transform: scale(1);
+    }
     95% {
-        opacity: 0.3;
+        opacity: 0.5;
+        transform: scale(15);
+        
     }
     100% {
         opacity: 0;
-        transform: scale(45);
         visibility: hidden;
     }
 }
+
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    color: rgb(241, 80, 80);
+    font-size: 20px;
+    animation: fadeOut 0.5s ease-in-out forwards;
+    user-select: none;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+#opening_messages{
+    transition: opacity 0.3s ease-in-out;   
+}
+
+
 .container{
+    
     display: grid;
     grid-template-columns: 1fr;
-    height: 100%;
+    height: 80%;
     place-content: center;
-    gap: 2rem;
+    gap: 1rem;
     justify-items: center;
     
 }
 .container img{
     pointer-events: none;
+    max-width: 300px;
 }
 .buttons {
     position: relative;
@@ -64,8 +132,8 @@ h1 {
 }
 .buttons > button {
     position: relative;
-    padding: 20px 40px;
-    font-size: 2rem;
+    padding: clamp(10px,15px,20px) clamp(20px,30px,40px);
+    font-size: 1rem;
     border: none;
     border-radius: 50px;
     color: black;
@@ -73,6 +141,11 @@ h1 {
 }
 
 #yes {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color:#fff3f3;
+    text-shadow: 3px 3px 0 #e76565, 5px 5px 0 rgba(0,0,0,0.1);
     background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(255,107,107,0.4);
@@ -103,7 +176,7 @@ h1 {
 
 @keyframes sheen { 
     100% {
-      transform: rotateZ(60deg) translate(1em, -4em);
+      transform: rotateZ(60deg) translate(1em, -7em);
     }
 }
 
@@ -128,7 +201,7 @@ h1 {
         top: -50%;
     }
     50%{
-        content: 'you dare ?';
+        content: 'ehhhhh :<';
         top: -50%;
         right: -50%;
     }
