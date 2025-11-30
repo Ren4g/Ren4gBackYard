@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Great+Vibes&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Happy Birthday!</title>
+</head>
+<body>
+    <canvas id="fireworks-canvas" aria-hidden="true"></canvas>
+    <div class="aurora-layer" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <main class="page">
+        <header class="hero" id="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">November 30 · Today is all yours</p>
+                <h1>
+                    <span class="script">Happy Birthday</span>
+                    <span class="name-glow">Superstar ✨</span>
+                </h1>
+                <p class="lead" id="lead-text" aria-live="polite">Sending sparkles of joy across the sky...</p>
+                <div class="hero-actions">
+                    <button class="primary" id="wishButton">Make a wish 🎂</button>
+                    <button class="ghost" id="sparkButton">Spark more magic</button>
+                </div>
+                <div class="progress" aria-label="Countdown to surprise">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+            <div class="hero-card" role="img" aria-label="Birthday celebration card">
+                <div class="card-stars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="cake">
+                    <div class="layer layer-top"></div>
+                    <div class="layer layer-mid"></div>
+                    <div class="layer layer-bottom"></div>
+                    <div class="plate"></div>
+                    <div class="candles">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                <p class="card-message">For the one who lights up every room.</p>
+            </div>
+        </header>
+
+        <section class="ticker" aria-label="Birthday affirmations">
+            <div class="ticker-track" id="tickerTrack">
+                <article class="ticker-card">You are made of stardust + sunshine</article>
+                <article class="ticker-card">Here’s to louder laughs & softer mornings</article>
+                <article class="ticker-card">Your smile is today’s favorite melody</article>
+                <article class="ticker-card">New year, same legendary heart</article>
+                <article class="ticker-card">Dream wildly. The universe is listening.</article>
+                <article class="ticker-card">This chapter sparkles brighter than the last</article>
+            </div>
+        </section>
+
+        <section class="milestones" aria-label="Little celebrations">
+            <article class="milestone-card">
+                <span class="icon">🎈</span>
+                <h3>Sky-high moments</h3>
+                <p>Every cheer you hear today travels back to you tenfold.</p>
+            </article>
+            <article class="milestone-card">
+                <span class="icon">🎁</span>
+                <h3>Unexpected magic</h3>
+                <p>May surprises find you in the small pauses between laughs.</p>
+            </article>
+            <article class="milestone-card">
+                <span class="icon">🌟</span>
+                <h3>Stardust trail</h3>
+                <p>Your kindness leaves a glow long after the candles fade.</p>
+            </article>
+        </section>
+
+        <section class="lanterns" aria-label="Wish lantern garden">
+            <div class="lantern-copy">
+                <h2>Light the sky with wishes</h2>
+                <p>Tap the button to release a glowing lantern. Each one carries a new blessing.</p>
+                <button id="lanternButton" class="primary secondary">Release a lantern</button>
+            </div>
+            <div class="lantern-stage" id="lanternStage" aria-hidden="true"></div>
+        </section>
+
+        <section class="closing" aria-live="polite">
+            <p id="closingMessage">Thank you for being you. The world spins brighter because you’re here.</p>
+            <div class="closing-actions">
+                <button id="celebrateButton" class="ghost">Launch fireworks</button>
+                <button id="confettiButton" class="primary tertiary">Rain confetti</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="player" aria-hidden="true"></div>
+
+    <script>
+        var tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+</body>
+
+</html>

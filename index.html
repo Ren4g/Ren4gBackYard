@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Happy Birthday!</title>
+</head>
+<body>
+    <div class="opening_eff"></div>
+    <div id="player"></div>
+    <div id="hearts-container"></div>
+    <h2 id="opening_messages"></h2>
+    
+    
+    <div class="container">
+        <h1>Sinh nhật zui zẻ</h1>
+        <img src="Happy Fun Sticker by Minto Inc.gif" alt="Birthday Celebration">
+        <div class="buttons">
+            <button id="yes" onclick="clicked(); player.unMute(); player.setVolume(50);" > thổi nến 🎂 </button>
+
+        </div>
+    </div>
+    
+
+    <script>
+        var tag = document.createElement("script");
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+    
+</body>
+
+</html>
